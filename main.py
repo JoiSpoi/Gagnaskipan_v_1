@@ -1,5 +1,6 @@
 from tile import Tile
 from player import Player
+from game import Game
 
 
 player = Player((1, 1))
@@ -15,7 +16,8 @@ tiles = {
 }
 
 def main():
-    ...
+    game = Game(player, tiles)
+    game.run_game()
 
 if __name__ == "__main__":
     main()

@@ -2,14 +2,11 @@ from player import Player
 from tile import Tile
 
 class Game:
-    def __init__(self) -> None:
-        pass
-
-    def start_game(self):
-        """Starts a new game, setting player position to 1,1 and coins to 0."""
-        self.player = Player((1,1))
-        self.player.coins = 0
-        self.end = (3,1) #Can be modified later when multiple levels are implemented.
+    def __init__(self, player, tiles) -> None:
+        """Starts a new game."""
+        self.player = player
+        self.tiles = tiles
+        self.end = (3,1) #If different levels are implemented, can change this to allow various start/end locations.
         return
         
     def run_game(self):
