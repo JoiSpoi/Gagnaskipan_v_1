@@ -19,7 +19,7 @@ class Game:
             print(*possible_moves, sep=", ")
 
             move = input()
-            if move in possible_moves:
+            if self.tiles[self.player.location].is_valid_move(move):
                 self.player.move_player(move)
             else:
                 print("Not a valid direction!")
