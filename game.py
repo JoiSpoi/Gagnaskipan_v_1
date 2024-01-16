@@ -13,7 +13,6 @@ class Game:
         """Contains main game loop."""
         while self.player.location != self.end:
             current_tile = self.tiles[self.player.location]
-            current_tile = self.tiles[self.player.location]
 
             self.player.display_state()
             print(current_tile)
