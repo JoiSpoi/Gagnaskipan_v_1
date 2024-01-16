@@ -1,6 +1,7 @@
 import random
 
 
+<<<<<<< Updated upstream
 walls = {
     (1, 1): ['e', 's'],
     (2, 1): ['w', 'e'],
@@ -11,6 +12,19 @@ walls = {
     (1, 3): ['e', 's'],
     (2, 3): ['w', 's'],
 }
+=======
+player = Player((1, 1))
+tiles = {
+    (1, 1): Tile(["n"]),
+    (2, 1): Tile(["n"]),
+    (3, 1): Tile(["n"]),
+    (1, 2): Tile(["n", "e", "s"]),
+    (2, 2): Tile(["w", "s"]),
+    (3, 2): Tile(["n", "s"]),
+    (1, 3): Tile(["w", "s"]),
+    (2, 3): Tile(["w", "e"]),
+} 
+>>>>>>> Stashed changes
 
 def is_valid_move(position, direction):
     if direction in walls.get(position, []):
