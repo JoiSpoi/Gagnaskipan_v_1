@@ -1,5 +1,6 @@
 import random
 
+
 walls = {
     (1, 1): ['e', 's'],
     (2, 1): ['w', 'e'],
