@@ -19,7 +19,7 @@ class Tile:
         return move in self.possible_moves
 
     def has_active_lever(self) -> bool:
-        if (self.lever is not None) and (self.lever.is_pulled):
+        if (self.lever is not None) and not (self.lever.is_pulled):
             return True
         return False
 
