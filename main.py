@@ -17,24 +17,9 @@ tiles = {
 }
 
 
-def get_movement_input(current_tile) -> str:
-    player.display_location()
-    print(current_tile)
-    move = input("Choose a direction (n/e/s/w): ")
-    return move
-
-
 def main():
     game = Game(player, tiles)
     game.run_game()
-
-    # current_tile = tile_map[player.location]
-    # move = get_movement_input(current_tile)
-    # while not current_tile.is_valid_move(move):
-    #     print("Invalid move")
-    #     move = get_movement_input(current_tile)
-    # player.move_player(move)
-    # player.display_location()
 
 
 if __name__ == "__main__":

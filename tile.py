@@ -1,6 +1,10 @@
+from lever import Lever
+
+
 class Tile:
-    def __init__(self, possible_moves: list[str]) -> None:
+    def __init__(self, possible_moves: list[str], lever: Lever | None = None) -> None:
         self.possible_moves = possible_moves
+        self.lever = lever
 
     def is_valid_move(self, move: str) -> bool:
         """Returns True if the move is valid."""
@@ -13,6 +17,11 @@ class Tile:
             raise ValueError("expected movement to be 'n', 'w', 's', 'e'")
 
         return move in self.possible_moves
+
+    def has_active_lever(self) -> bool:
+        if (self.lever is not None) and (self.lever.is_pulled):
+            return True
+        return False
 
     def __str__(self) -> str:
         return f"Available directions: {', '.join(self.possible_moves).upper()}"
