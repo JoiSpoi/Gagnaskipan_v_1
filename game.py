@@ -12,14 +12,18 @@ class Game:
     def run_game(self):
         """Contains main game loop."""
         while self.player.location != self.end:
-            possible_moves = self.tiles[self.player.location].possible_moves
+            current_tile = self.tiles[self.player.location]
 
-            print(f"You are at {self.player.location}. You have {self.player.coins} gold coins.")
-            print("Available directions:", end=" ")
-            print(*possible_moves, sep=", ")
+            self.player.display_state()
+            print(current_tile)
+            #print("Available directions:", end=" ")
+            #print(*possible_moves, sep=", ")
 
             move = input()
-            if self.tiles[self.player.location].is_valid_move(move):
+            if current_tile.is_valid_move(move):
                 self.player.move_player(move)
             else:
                 print("Not a valid direction!")
+
+        if self.player.location == self.end:
+            print(f"Congratulations! You've reached the victory tile with {self.player.coins} gold coins!")
