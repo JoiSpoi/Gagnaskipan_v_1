@@ -6,11 +6,13 @@ class Tile:
         """Returns True if the move is valid."""
         if not isinstance(move, str):
             raise TypeError(f"expected move argument to be of type str, but got {type(move)}")
-        
+
+        move = move.lower()
+
         if move not in ["n", "w", "s", "e"]:
             raise ValueError("expected movement to be 'n', 'w', 's', 'e'")
 
-        return move.lower() in self.possible_moves
-    
+        return move in self.possible_moves
+
     def __str__(self) -> str:
         return f"Available directions: {', '.join(self.possible_moves).upper()}"
