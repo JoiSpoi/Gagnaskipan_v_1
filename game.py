@@ -12,6 +12,14 @@ class Game:
     def run_game(self):
         """Contains main game loop."""
         while self.player.location != self.end:
-            print(f"You are at {self.player.location}. You have {self.coins} gold coins.")
-            self.player.move_player()
-    
+            possible_moves = self.tiles[self.player.location].possible_moves
+
+            print(f"You are at {self.player.location}. You have {self.player.coins} gold coins.")
+            print("Available directions:", end=" ")
+            print(*possible_moves, sep=", ")
+
+            move = input()
+            if move in possible_moves:
+                self.player.move_player(move)
+            else:
+                print("Not a valid direction!")
