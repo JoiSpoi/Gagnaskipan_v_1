@@ -13,6 +13,7 @@ class Game:
         """Contains main game loop."""
         while self.player.location != self.end:
             current_tile = self.tiles[self.player.location]
+            current_tile = self.tiles[self.player.location]
 
             self.player.display_state()
             print(current_tile)
@@ -22,3 +23,6 @@ class Game:
                 self.player.move_player(move)
             else:
                 print("Not a valid direction!")
+
+        if self.player.location == self.end:
+            print(f"Congratulations! You've reached the victory tile with {self.player.coins} gold coins!")
