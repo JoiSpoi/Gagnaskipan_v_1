@@ -2,7 +2,7 @@ from player import Player
 from tile import Tile
 
 class Game:
-    def __init__(self, player, tiles) -> None:
+    def __init__(self, player: Player, tiles: list[Tile]) -> None:
         """Starts a new game."""
         self.player = player
         self.tiles = tiles
