@@ -2,7 +2,7 @@ from player import Player
 from tile import Tile
 
 class Game:
-    def __init__(self, player: Player, tiles: list[Tile]) -> None:
+    def __init__(self, player: Player, tiles: dict[tuple, Tile]) -> None:
         """Starts a new game."""
         self.player = player
         self.tiles = tiles
@@ -13,6 +13,9 @@ class Game:
         """Contains main game loop."""
         while self.player.location != self.end:
             current_tile = self.tiles[self.player.location]
+
+            if current_tile.has_active_lever():
+                pass
 
             self.player.display_state()
             print(current_tile)
