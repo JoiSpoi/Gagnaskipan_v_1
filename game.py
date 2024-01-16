@@ -1,4 +1,5 @@
 from player import Player
+from tile import Tile
 
 class Game:
     def __init__(self) -> None:
@@ -10,11 +11,6 @@ class Game:
         self.player.coins = 0
         self.end = (3,1) #Can be modified later when multiple levels are implemented.
         return
-
-    def player_input(self):
-        """Receives player input."""
-        p_input = input().lower()
-        if p_input in 
         
     def run_game(self):
         """Contains main game loop."""
