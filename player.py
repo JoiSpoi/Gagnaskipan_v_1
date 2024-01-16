@@ -17,3 +17,6 @@ class Player:
             self.location = (x+1, y)
         elif movement == "w":
             self.location = (x-1, y)
+
+    def display_location(self) -> None:
+        print(f"You are at {self.location[0]}, {self.location[1]}.")
