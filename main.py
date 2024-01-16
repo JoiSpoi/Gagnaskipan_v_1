@@ -1,7 +1,6 @@
 from player import Player
 from game import Game
 from tile import Tile
-from tile import Lever
 
 
 player = Player((1, 1))

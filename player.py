@@ -20,4 +20,4 @@ class Player:
             self.location = (x-1, y)
 
     def display_state(self) -> None:
-        print(f"You are at {self.player.location}. You have {self.player.coins} gold coins.")
+        print(f"You are at {self.location}. You have {self.coins} gold coins.")
